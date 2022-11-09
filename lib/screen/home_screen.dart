@@ -17,12 +17,16 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
+              onPressed: () async{
+                //async, final await는 한 세트
+                final result = await Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (BuildContext context) => RouteOneScreen(),
+                    builder: (BuildContext context) => RouteOneScreen(
+                      number: 123,
+                    ),
                   ),
                 );
+                print(result);
               },
               child: Text('Push'),
             )
