@@ -23,6 +23,21 @@ class RouteOneScreen extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
+            print(Navigator.of(context).canPop());
+          },
+          child: Text('canPop'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).maybePop(456);
+
+            //Navigator.of(context).pop();
+            // pop안에 숫자 변수를 넣어 받는 위젯에서 async를 통해 데이터 받을 수 있다
+          },
+          child: Text('maybePop'),
+        ),
+        ElevatedButton(
+          onPressed: () {
             Navigator.of(context).pop(456);
 
             //Navigator.of(context).pop();
